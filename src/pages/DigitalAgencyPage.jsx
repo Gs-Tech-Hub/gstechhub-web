@@ -1,19 +1,18 @@
 import React from 'react';
-import HeroStyle4 from '../Hero/HeroStyle4';
-import Spacing from '../Spacing';
-import SectionHeading from '../SectionHeading';
-import PostGridStyle2 from '../PostGrid/PostGridStyle2';
-import Marquee from '../Marquee';
-import Brands from '../Brands';
-import Cta from '../Cta';
-import TestimonialSlider from '../Slider/TestimonialSlider';
-import FunFact from '../FunFact';
-import AboutStyle4 from '../About/AboutStyle4';
-import AboutStyle5 from '../About/AboutStyle5';
-import IconBoxStyle2 from '../IconBox/IconBoxStyle2';
-import PortfolioSlider from '../Slider/PortfolioSlider';
-import PricingTableList from '../PricingTable/PricingTableList';
-import { pageTitle } from '../../helpers/PageTitle';
+import HeroStyle4 from '../components/Hero/HeroStyle4';
+import Spacing from '../components/Spacing';
+import SectionHeading from '../components/SectionHeading';
+import PostGridStyle2 from '../components/PostGrid/PostGridStyle2';
+import Brands from '../components/Brands';
+import Cta from '../components/Cta';
+import TestimonialSlider from '../components/Slider/TestimonialSlider';
+import FunFact from '../components/FunFact';
+import AboutStyle4 from '../components/About/AboutStyle4';
+import AboutStyle5 from '../components/About/AboutStyle5';
+import IconBoxStyle2 from '../components/IconBox/IconBoxStyle2';
+import PortfolioSlider from '../components/Slider/PortfolioSlider';
+import PricingTableList from '../components/PricingTable/PricingTableList';
+import { pageTitle } from '../helpers/PageTitle';
 const funfactData = [
   { title: 'Happy Customers', number: '22k' },
   { title: 'Work’s Completed', number: '15k' },
@@ -101,15 +100,15 @@ const testimonialData = [
 ];
 const portfolioData = [
   {
-    thumbnailSrc: '/images/digital-agency/portfolio_1.jpeg',
-    miniTitle: 'React Development',
-    title: 'Corporate Webly <br />Application',
+    thumbnailSrc: '/images/digital-agency/portfolio_1.png',
+    miniTitle: 'Web & App Development',
+    title: 'Corporate Web <br />Application',
     subTitle:
       'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
     href: '/portfolio/portfolio-details',
   },
   {
-    thumbnailSrc: '/images/digital-agency/portfolio_2.jpeg',
+    thumbnailSrc: '/images/digital-agency/portfolio_2.png',
     miniTitle: 'UI/UX Design',
     title: 'eCommerce User <br />Interface Design',
     subTitle:
@@ -117,15 +116,15 @@ const portfolioData = [
     href: '/portfolio/portfolio-details',
   },
   {
-    thumbnailSrc: '/images/digital-agency/portfolio_3.jpeg',
-    miniTitle: '3D Render',
-    title: 'Multi Dimension <br />Two Square',
+    thumbnailSrc: '/images/digital-agency/portfolio_3.png',
+    miniTitle: 'Digital Security',
+    title: 'Cyber Security <br />& Audits',
     subTitle:
       'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
     href: '/portfolio/portfolio-details',
   },
   {
-    thumbnailSrc: '/images/digital-agency/portfolio_4.jpeg',
+    thumbnailSrc: '/images/digital-agency/portfolio_4.png',
     miniTitle: 'Animation',
     title: 'Animated Abstract <br />3D Background',
     subTitle:
@@ -144,10 +143,10 @@ export default function DigitalAgencyPage({ darkMode }) {
         thumbnailSrc={
           darkMode
             ? '/images/digital-agency/hero_bg_dark.jpeg'
-            : '/images/digital-agency/hero_bg.jpeg'
+            : '/images/digital-agency/hero_bg.jpeg' 
         }
-        videoSrc="https://www.youtube.com/embed/VcaAVWtP48A"
-        bgUrl="/images/digital-agency/hero_video_bg.jpeg"
+        videoSrc="https://www.youtube.com/embed/VcaAVWtP48A?si=vndld55D7mte_-2P"
+        bgUrl="/images/digital-agency/hero_vid_bg.png"
       />
       <div className="cs_primary_bg">
         <Spacing lg="125" md="80" />
@@ -158,7 +157,7 @@ export default function DigitalAgencyPage({ darkMode }) {
       </div>
       <Spacing lg="150" md="80" />
       <AboutStyle4
-        thumbnailSrc="/images/digital-agency/about_1.jpeg"
+        thumbnailSrc="/images/digital-agency/about_1.png"
         miniTitle="Company Info"
         title="Marketing agency for your business"
         subTitle="Our team, specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and do merge imaginative thinking posible.
@@ -169,7 +168,7 @@ export default function DigitalAgencyPage({ darkMode }) {
 
       <Spacing lg="150" md="80" />
       <AboutStyle5
-        thumbnailSrc="/images/digital-agency/about_2.jpeg"
+        thumbnailSrc="/images/digital-agency/about_2.png"
         videoSrc="/images/digital-agency/video.mp4"
         miniTitle="What We Do"
         title="Best value service provider agency"
@@ -308,13 +307,6 @@ export default function DigitalAgencyPage({ darkMode }) {
         <div className="cs_height_150 cs_height_lg_80" />
       </section>
       <TestimonialSlider
-        layeredImages={[
-          '/images/digital-agency/layer_img_1.png',
-          '/images/digital-agency/layer_img_2.png',
-          '/images/digital-agency/layer_img_3.png',
-          '/images/digital-agency/layer_img_4.png',
-          '/images/digital-agency/layer_img_5.png',
-        ]}
         data={testimonialData}
       />
       <Cta
@@ -362,7 +354,6 @@ export default function DigitalAgencyPage({ darkMode }) {
         </div>
       </section>
       <Spacing lg="135" md="70" />
-      <Marquee text="We Create Design - Build App - Website - Branding - SEO" />
       <Spacing lg="84" md="50" />
       <div className="container">
         <Brands data={darkMode ? brandListDark : brandList} />

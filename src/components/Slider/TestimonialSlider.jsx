@@ -3,7 +3,7 @@ import Testimonial from '../Testimonial';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-export default function TestimonialSlider({ layeredImages, data }) {
+export default function TestimonialSlider({  data }) {
   return (
     <div>
       <div className="cs_height_150 cs_height_lg_80" />
@@ -80,14 +80,7 @@ export default function TestimonialSlider({ layeredImages, data }) {
             />
           </svg>
         </div>
-        {layeredImages.map((item, index) => (
-          <div
-            key={index}
-            className={`position-absolute cs_layered_img_${index + 1}`}
-          >
-            <img src={item} alt="Thumb" />
-          </div>
-        ))}
+        
         <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2">

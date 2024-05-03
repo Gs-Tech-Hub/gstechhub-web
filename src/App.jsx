@@ -2,9 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Pages/Home';
-import MarketingAgencyPage from './components/Pages/MarketingAgencyPage';
-import StudioAgencyPage from './components/Pages/StudioAgencyPage';
-import DigitalAgencyPage from './components/Pages/DigitalAgencyPage';
+import DigitalAgencyPage from './pages/DigitalAgencyPage';
 import ServicePage from './components/Pages/ServicePage';
 import AboutPage from './components/Pages/AboutPage';
 import BlogPage from './components/Pages/BlogPage';
@@ -17,7 +15,6 @@ import TeamPage from './components/Pages/TeamPage';
 import TeamDetailsPage from './components/Pages/TeamDetailsPage';
 import ContactPage from './components/Pages/ContactPage';
 import Layout2 from './components/Layout/Layout2';
-import TechStartupPage from './components/Pages/TechStartupPage';
 import ServiceDetailsPage from './components/Pages/ServiceDetailsPage';
 import Shop from './components/Pages/Shop';
 import ProductDetails from './components/Pages/Shop/ProductDetails';
@@ -37,11 +34,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout darkMode />}>
-        <Route
-          path="marketing-agency"
-          element={<MarketingAgencyPage darkMode />}
-        />
-        <Route path="studio-agency" element={<StudioAgencyPage darkMode />} />
+        
         <Route path="digital-agency" element={<DigitalAgencyPage darkMode />} />
         <Route path="about" element={<AboutPage darkMode />} />
         <Route path="service" element={<ServicePage />} />
@@ -63,8 +56,7 @@ function App() {
         <Route path="contact" element={<ContactPage />} />
       </Route>
       <Route path="/" element={<Layout2 darkMode />}>
-        <Route index element={<Home />} />
-        <Route path="tech-startup" element={<TechStartupPage />} />
+        <Route index element={<DigitalAgencyPage darkMode />} />
       </Route>
       <Route path="/" element={<Layout3 darkMode />}>
         <Route path="shop" element={<Shop />} />
@@ -74,11 +66,10 @@ function App() {
         <Route path="shop/success" element={<Success />} />
         <Route path="shop/wishlist" element={<Wishlist />} />
       </Route>
+
+      
       {/* Start Light Mode */}
       <Route path="/light/" element={<Layout />}>
-        <Route path="marketing-agency" element={<MarketingAgencyPage />} />
-        <Route path="studio-agency" element={<StudioAgencyPage />} />
-        <Route path="digital-agency" element={<DigitalAgencyPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="service" element={<ServicePage />} />
         <Route
@@ -100,7 +91,6 @@ function App() {
       </Route>
       <Route path="/light/" element={<Layout2 />}>
         <Route index element={<Home />} />
-        <Route path="tech-startup" element={<TechStartupPage />} />
       </Route>
       <Route path="/light/" element={<Layout3 />}>
         <Route path="shop" element={<Shop />} />

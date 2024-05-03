@@ -25,7 +25,7 @@ export default function HeroStyle4({ videoSrc, bgUrl, thumbnailSrc }) {
                 and Marketing analysis.
               </p>
               <a
-                href="#service"
+                href="/service"
                 className="cs_down_btn cs_center cs_primary_color"
               >
                 <svg
@@ -44,7 +44,8 @@ export default function HeroStyle4({ videoSrc, bgUrl, thumbnailSrc }) {
             </div>
           </div>
           <div className="col-lg-7">
-            <VideoModal videoSrc={videoSrc} bgUrl={bgUrl} />
+          <VideoModal videoSrc={videoSrc} bgUrl={bgUrl} />
+
           </div>
         </div>
       </div>
