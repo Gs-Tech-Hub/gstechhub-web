@@ -58,7 +58,7 @@ const brandListDark = [
 
 export default function DigitalAgencyPage({ darkMode }) {
   pageTitle('Home');
-  const api = ApiHandler({ baseUrl: 'http://localhost:1337' }); 
+  const api = ApiHandler({ baseUrl: 'http://localhost:1337' });
   const [funfactData, setFunfactData] = useState([]);
   const [postData, setPostData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
@@ -78,8 +78,8 @@ export default function DigitalAgencyPage({ darkMode }) {
     setPortfolioData(portfolio);
   };
 
- 
-  
+
+
   return (
     <>
       <HeroStyle4
@@ -88,7 +88,7 @@ export default function DigitalAgencyPage({ darkMode }) {
         thumbnailSrc={
           darkMode
             ? '/images/digital-agency/hero_bg_dark.jpeg'
-            : '/images/digital-agency/hero_bg.jpeg' 
+            : '/images/digital-agency/hero_bg.jpeg'
         }
         videoSrc="https://www.youtube.com/embed/VcaAVWtP48A?si=vndld55D7mte_-2P"
         bgUrl="/images/digital-agency/hero_vid_bg.png"
