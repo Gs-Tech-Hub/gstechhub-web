@@ -4,7 +4,7 @@ export default function IconBoxStyle2({ features, iconSrc, title, subTitle }) {
   return (
     <div className="cs_iconbox cs_style_2">
       <div className="cs_iconbox_icon">
-        <img src={iconSrc} alt="Icon" />
+        <img src={iconSrc} alt="Icon" className='ab_service'/>
       </div>
       <h2 className="cs_iconbox_title cs_white_color cs_medium cs_fs_29">
         {title}

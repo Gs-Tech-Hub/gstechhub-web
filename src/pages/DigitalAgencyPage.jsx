@@ -190,9 +190,9 @@ export default function DigitalAgencyPage({ darkMode }) {
           />
           <Spacing lg="85" md="45" />
           <div className="row cs_gap_y_45">
-            <div className="col-lg-3 col-sm-6">
+            <div className="col-lg-3 col-sm-6 ">
               <IconBoxStyle2
-                iconSrc="/images/digital-agency/service_icon_1.svg"
+                iconSrc="/images/digital-agency/brand_stratege.png"
                 title="Brand Stratege"
                 subTitle="Brand's strategy and insights are a forward-thinking blueprint for success."
                 features={[
@@ -207,7 +207,7 @@ export default function DigitalAgencyPage({ darkMode }) {
             </div>
             <div className="col-lg-3 col-sm-6">
               <IconBoxStyle2
-                iconSrc="/images/digital-agency/service_icon_2.svg"
+                iconSrc="/images/digital-agency/ui_ux.png"
                 title="UI/UX Design"
                 subTitle="Help reinforce your brand's identity & cultivate positive user behaviors."
                 features={[
@@ -222,7 +222,7 @@ export default function DigitalAgencyPage({ darkMode }) {
             </div>
             <div className="col-lg-3 col-sm-6">
               <IconBoxStyle2
-                iconSrc="/images/digital-agency/service_icon_3.svg"
+                iconSrc="/images/digital-agency/animation.png"
                 title="Animation"
                 subTitle="Bringing stories to life the power of modern age animation."
                 features={[
@@ -236,7 +236,7 @@ export default function DigitalAgencyPage({ darkMode }) {
             </div>
             <div className="col-lg-3 col-sm-6">
               <IconBoxStyle2
-                iconSrc="/images/digital-agency/service_icon_4.svg"
+                iconSrc="/images/digital-agency/webdevelopment.png"
                 title="Web Development"
                 subTitle="Exploring the World of Web Development in zivan digital agency."
                 features={[
