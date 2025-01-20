@@ -3,9 +3,9 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Pages/Home';
 import DigitalAgencyPage from './pages/DigitalAgencyPage';
-import ServicePage from './components/Pages/ServicePage';
-import AboutPage from './components/Pages/AboutPage';
-import BlogPage from './components/Pages/BlogPage';
+import ServicePage from './pages/ServicePage';
+import AboutPage from './pages/AboutPage';
+import BlogPage from './pages/BlogPage';
 import BlogListPage from './components/Pages/BlogListPage';
 import BlogDetailsPage from './components/Pages/BlogDetailsPage';
 import PortfolioPage from './components/Pages/PortfolioPage';
@@ -13,7 +13,7 @@ import PortfolioDetailsPage from './components/Pages/PortfolioDetailsPage';
 import CaseStudyDetailsPage from './components/Pages/CaseStudyDetailsPage';
 import TeamPage from './components/Pages/TeamPage';
 import TeamDetailsPage from './components/Pages/TeamDetailsPage';
-import ContactPage from './components/Pages/ContactPage';
+import ContactPage from './pages/ContactPage';
 import Layout2 from './components/Layout/Layout2';
 import ServiceDetailsPage from './components/Pages/ServiceDetailsPage';
 import Shop from './components/Pages/Shop';
@@ -93,12 +93,12 @@ function App() {
         <Route index element={<Home />} />
       </Route>
       <Route path="/light/" element={<Layout3 />}>
-        <Route path="shop" element={<Shop />} />
-        <Route path="shop/:productId" element={<ProductDetails />} />
-        <Route path="shop/cart" element={<Cart />} />
-        <Route path="shop/checkout" element={<Checkout />} />
-        <Route path="shop/success" element={<Success />} />
-        <Route path="shop/wishlist" element={<Wishlist />} />
+        {/* <Route path="shop" element={<Shop />} /> */}
+        {/* <Route path="shop/:productId" element={<ProductDetails />} /> */}
+        {/* <Route path="shop/cart" element={<Cart />} /> */}
+        {/* <Route path="shop/checkout" element={<Checkout />} /> */}
+        {/* <Route path="shop/success" element={<Success />} /> */}
+        {/* <Route path="shop/wishlist" element={<Wishlist />} /> */}
       </Route>
       {/* End Light Mode */}
       <Route path="*" element={<ErrorPage />} />
