@@ -1,8 +1,11 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import ApiHandler from '../api/api';
 import HeroStyle4 from '../components/Hero/HeroStyle4';
 import Spacing from '../components/Spacing';
 import SectionHeading from '../components/SectionHeading';
 import PostGridStyle2 from '../components/PostGrid/PostGridStyle2';
+import PostGridTest from '../components/PostGrid/PostGridCustom';
 import Brands from '../components/Brands';
 import Cta from '../components/Cta';
 import TestimonialSlider from '../components/Slider/TestimonialSlider';
@@ -13,38 +16,9 @@ import IconBoxStyle2 from '../components/IconBox/IconBoxStyle2';
 import PortfolioSlider from '../components/Slider/PortfolioSlider';
 import PricingTableList from '../components/PricingTable/PricingTableList';
 import { pageTitle } from '../helpers/PageTitle';
-const funfactData = [
-  { title: 'Happy Customers', number: '22k' },
-  { title: 'Work’s Completed', number: '15k' },
-  { title: 'Skilled Team Members', number: '121' },
-  { title: 'Most Valuable Awards', number: '15' },
-];
-const postData = [
-  {
-    date: '05 Mar 2023',
-    title: 'How to keep fear from ruining your art business with confident',
-    thumbnailSrc: '/images/studio-agency/post_2.jpeg',
-    href: '/blog/blog-details',
-  },
-  {
-    date: '07 Mar 2023',
-    title: 'Artistic mind will be great for creation anything',
-    thumbnailSrc: '/images/studio-agency/post_1.jpeg',
-    href: '/blog/blog-details',
-  },
-  {
-    date: '03 Mar 2023',
-    title: 'How to keep fear from ruining your art business with confident',
-    thumbnailSrc: '/images/studio-agency/post_3.jpeg',
-    href: '/blog/blog-details',
-  },
-  {
-    date: '02 Mar 2023',
-    title: 'How to keep fear from ruining your art business with confident',
-    thumbnailSrc: '/images/studio-agency/post_4.jpeg',
-    href: '/blog/blog-details',
-  },
-];
+
+
+
 const brandList = [
   {
     logoSrc: '/images/marketing-agency/brand_1.svg',
@@ -81,60 +55,31 @@ const brandListDark = [
     logoAlt: 'Brand',
   },
 ];
-const testimonialData = [
-  {
-    text: 'Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.',
-    avatarName: 'Ansari Patron',
-    avatarDesignation: 'CEO at Delta',
-  },
-  {
-    text: 'Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.',
-    avatarName: 'Jhon Doe',
-    avatarDesignation: 'Manager at Delta',
-  },
-  {
-    text: 'Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.',
-    avatarName: 'Ramatam Coo',
-    avatarDesignation: 'MD at Delta',
-  },
-];
-const portfolioData = [
-  {
-    thumbnailSrc: '/images/digital-agency/portfolio_1.png',
-    miniTitle: 'Web & App Development',
-    title: 'Corporate Web <br />Application',
-    subTitle:
-      'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
-    href: '/portfolio/portfolio-details',
-  },
-  {
-    thumbnailSrc: '/images/digital-agency/portfolio_2.png',
-    miniTitle: 'UI/UX Design',
-    title: 'eCommerce User <br />Interface Design',
-    subTitle:
-      'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
-    href: '/portfolio/portfolio-details',
-  },
-  {
-    thumbnailSrc: '/images/digital-agency/portfolio_3.png',
-    miniTitle: 'Digital Security',
-    title: 'Cyber Security <br />& Audits',
-    subTitle:
-      'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
-    href: '/portfolio/portfolio-details',
-  },
-  {
-    thumbnailSrc: '/images/digital-agency/portfolio_4.png',
-    miniTitle: 'Animation',
-    title: 'Animated Abstract <br />3D Background',
-    subTitle:
-      'From designing the user interface to coding the functionality and ensuring the <br /> website is secure and optimized for performance.',
-    href: '/portfolio/portfolio-details',
-  },
-];
 
 export default function DigitalAgencyPage({ darkMode }) {
-  pageTitle('Digital Agency');
+  pageTitle('Home');
+  const api = ApiHandler({ baseUrl: 'http://localhost:1337' }); 
+  const [funfactData, setFunfactData] = useState([]);
+  const [postData, setPostData] = useState([]);
+  const [testimonialData, setTestimonialData] = useState([]);
+  const [portfolioData, setPortfolioData] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const funfacts = await api.fetchData('api/funfacts');
+    const posts = await api.fetchData('api/posts?api/posts?filters[is_featured][$eq]=true&fields[0]=title&fields[1]=createdAt&populate[coverphoto][fields][0]=name&populate[coverphoto][fields][1]=url');
+    const testimonial = await api.fetchData('api/testimonials?fields[0]=Name&fields[1]=Description&fields[2]=CompanyPosition')
+    const portfolio = await api.fetchData('api/portfolios?populate[CoverPhoto][fields][0]=name&populate[CoverPhoto][fields][1]=url&fields[0]=Title&fields[1]=miniTitle&fields[2]=SubTitle&fields[3]=urlSlug')
+    setFunfactData(funfacts);
+    setPostData(posts);
+    setTestimonialData(testimonial);
+    setPortfolioData(portfolio);
+  };
+
+ 
+  
   return (
     <>
       <HeroStyle4
@@ -160,8 +105,7 @@ export default function DigitalAgencyPage({ darkMode }) {
         thumbnailSrc="/images/digital-agency/about_1.png"
         miniTitle="Company Info"
         title="Marketing agency for your business"
-        subTitle="Our team, specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and do merge imaginative thinking posible.
-        dolores eos qui ratione voluptatem lipe sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam ever the world lorem ipsum."
+        subTitle="our team specializes in strategic digital marketing, forging partnerships with the world's leading brands. We pride ourselves on breaking from the norm, pushing boundaries, and merging imaginative thinking with tangible results. Our innovative approach challenges conventional strategies, ensuring that our clients stand out in an increasingly competitive digital landscape."
         btnText="See Our Services"
         btnUrl="/service"
       />
@@ -350,7 +294,7 @@ export default function DigitalAgencyPage({ darkMode }) {
         <div className="container">
           <SectionHeading title="Some recent news" subTitle="Our Blog" />
           <Spacing lg="85" md="45" />
-          <PostGridStyle2 data={postData} />
+          <PostGridTest data={postData} />
         </div>
       </section>
       <Spacing lg="135" md="70" />
