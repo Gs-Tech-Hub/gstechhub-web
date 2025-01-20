@@ -25,11 +25,11 @@ export default function PricingTableList() {
         <div className="col-lg-4">
           {tab === 'monthly' && (
             <PricingTable
-              title="Silver"
+              title="Digital Marketing Outsourcing"
               subTitle="Control your choices for effective business growth and more customers."
-              price="399"
+              price="50"
               currency="$"
-              timeline="monthly"
+              timeline="Monthly"
               features={[
                 'Limited content',
                 'Ad campaign',
@@ -42,7 +42,7 @@ export default function PricingTableList() {
           )}
           {tab === 'yearly' && (
             <PricingTable
-              title="Silver"
+              title="Digital Marketing Outsourcing"
               subTitle="Control your choices for effective business growth and more customers."
               price="499"
               currency="$"
@@ -61,9 +61,9 @@ export default function PricingTableList() {
         <div className="col-lg-4">
           {tab === 'monthly' && (
             <PricingTable
-              title="Gold"
+              title="Enterprise Management Software Service"
               subTitle="Control your choices for effective business growth and more customers."
-              price="449"
+              price="299"
               currency="$"
               timeline="monthly"
               features={[
@@ -71,6 +71,8 @@ export default function PricingTableList() {
                 'Social ad campaign',
                 'Premium consultancy',
                 'Secret strategy',
+                'Single Feature Enterprise Management Software',
+
               ]}
               btnText="Choose Packedge"
               btnLink="/"
@@ -81,7 +83,7 @@ export default function PricingTableList() {
             <PricingTable
               title="Gold"
               subTitle="Control your choices for effective business growth and more customers."
-              price="649"
+              price="2500"
               currency="$"
               timeline="yearly"
               features={[
@@ -89,6 +91,7 @@ export default function PricingTableList() {
                 'Social ad campaign',
                 'Premium consultancy',
                 'Secret strategy',
+                'Single Feature Enterprise Management Software',
               ]}
               btnText="Choose Packedge"
               btnLink="/"
@@ -99,7 +102,7 @@ export default function PricingTableList() {
         <div className="col-lg-4">
           {tab === 'monthly' && (
             <PricingTable
-              title="Platinum"
+              title="Premium Enterprise Management Services"
               subTitle="Control your choices for effective business growth and more customers."
               price="599"
               currency="$"
@@ -109,6 +112,7 @@ export default function PricingTableList() {
                 'Ad campaign',
                 'Branding consultancy',
                 'Video ad banner',
+                'Full featured Enterprise management Software',
               ]}
               btnText="Choose Packedge"
               btnLink="/"
@@ -116,9 +120,9 @@ export default function PricingTableList() {
           )}
           {tab === 'yearly' && (
             <PricingTable
-              title="Platinum"
+              title="Premium Enterprise Management Services"
               subTitle="Control your choices for effective business growth and more customers."
-              price="899"
+              price="5999"
               currency="$"
               timeline="yearly"
               features={[
@@ -126,6 +130,7 @@ export default function PricingTableList() {
                 'Ad campaign',
                 'Branding consultancy',
                 'Video ad banner',
+                'Full featured Enterprise management Software',
               ]}
               btnText="Choose Packedge"
               btnLink="/"

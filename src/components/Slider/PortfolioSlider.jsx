@@ -4,6 +4,10 @@ import { Pagination } from 'swiper/modules';
 import PortfolioStyle2 from '../Portfolio/PortfolioStyle2';
 
 export default function PortfolioSlider({ data }) {
+  const portfolios = data && data.data ? data.data : [];
+  if (!Array.isArray(portfolios) || portfolios.length === 0) {
+      return <div>No testimonials available Now.</div>;
+  }
   // const pagination = {
   //   clickable: true,
   //   renderBullet: function (index, className) {
@@ -29,11 +33,26 @@ export default function PortfolioSlider({ data }) {
           modules={[Pagination]}
           className="cs_number_pagination"
         >
-          {data?.map((item, index) => (
-            <SwiperSlide key={index}>
-              <PortfolioStyle2 {...item} />
-            </SwiperSlide>
-          ))}
+            {portfolios.map((portfolio, index) => {
+                  const {
+                    miniTitle,
+                    Title,
+                    SubTitle,
+                    urlSlug, } = portfolio.attributes;
+                    const CoverPhoto = portfolio.attributes.CoverPhoto.data.attributes.url;
+                    console.log(urlSlug);
+                  return (
+                    <SwiperSlide key={index}>
+                      <PortfolioStyle2
+                        coverPhoto={CoverPhoto}
+                        title={Title}
+                        miniTitle={miniTitle}
+                        subTitle={SubTitle}
+                        href={urlSlug}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
         </Swiper>
       </div>
     </div>

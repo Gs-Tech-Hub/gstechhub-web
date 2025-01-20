@@ -53,9 +53,9 @@ export default function Header({
                   <li>
                     <Link to="about">About</Link>
                   </li>
-                  <li className="menu-item-has-children">
+                  <li >
                     <Link to="service">Service</Link>
-                    <DropDown>
+                    {/* <DropDown>
                       <ul>
                         <li>
                           <Link to="service">Service</Link>
@@ -66,11 +66,11 @@ export default function Header({
                           </Link>
                         </li>
                       </ul>
-                    </DropDown>
+                    </DropDown> */}
                   </li>
-                  <li className="menu-item-has-children">
+                  <li >
                     <Link to="blog">Blog</Link>
-                    <DropDown>
+                    {/* <DropDown>
                       <ul>
                         <li>
                           <Link to="blog">Blog Standard</Link>
@@ -82,9 +82,9 @@ export default function Header({
                           <Link to="blog/blog-details">Blog Details</Link>
                         </li>
                       </ul>
-                    </DropDown>
+                    </DropDown> */}
                   </li>
-                  <li className="menu-item-has-children">
+                  {/* <li className="menu-item-has-children">
                     <Link to="shop">Shop</Link>
                     <DropDown>
                       <ul>
@@ -108,8 +108,8 @@ export default function Header({
                         </li>
                       </ul>
                     </DropDown>
-                  </li>
-                  <li className="menu-item-has-children">
+                  </li> */}
+                  {/* <li className="menu-item-has-children">
                     <Link to="/">Pages</Link>
                     <DropDown>
                       <ul>
@@ -134,7 +134,7 @@ export default function Header({
                         </li>
                       </ul>
                     </DropDown>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="contact">Contact</Link>
                   </li>

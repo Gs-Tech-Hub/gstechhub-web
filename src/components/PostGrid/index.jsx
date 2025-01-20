@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import PostStyle2 from '../Post/PostStyle2';
 import PostStyle3 from '../Post/PostStyle3';
 

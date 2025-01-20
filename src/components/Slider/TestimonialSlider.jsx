@@ -1,9 +1,13 @@
 import React from 'react';
-import Testimonial from '../Testimonial';
+import Testimonial from '../Testimonial/testimonialCustom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 export default function TestimonialSlider({  data }) {
+  const testimonials = data && data.data ? data.data : [];
+  if (!Array.isArray(testimonials) || testimonials.length === 0) {
+      return <div>No testimonials available Now.</div>;
+  }
   return (
     <div>
       <div className="cs_height_150 cs_height_lg_80" />
@@ -94,11 +98,19 @@ export default function TestimonialSlider({  data }) {
                   prevEl: '.cs_swiper_prev',
                 }}
               >
-                {data?.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <Testimonial {...item} />
-                  </SwiperSlide>
-                ))}
+                 {testimonials.map((testimonial, index) => {
+                  const { Description, Name, CompanyPosition } = testimonial.attributes;
+                  
+                  return (
+                    <SwiperSlide key={index}>
+                      <Testimonial
+                        Description={Description}
+                        Name={Name}
+                        CompanyPosition={CompanyPosition}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
               <div className="cs_swiper_navigation cs_style_1">
                 <div className="cs_swiper_prev">

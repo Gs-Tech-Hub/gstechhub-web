@@ -3,19 +3,24 @@ import parse from 'html-react-parser';
 import { Link } from 'react-router-dom';
 
 export default function PortfolioStyle2({
-  thumbnailSrc,
+  coverPhoto,
   miniTitle,
   title,
   subTitle,
   href,
 }) {
+  const CoverPhotoUrl = `http://localhost:1337${coverPhoto}`;
+  
+  
+
   return (
     <div className="cs_portfolio cs_style_2">
       <div
         className="cs_portfolio_thumb cs_bg_filed"
         style={{
-          backgroundImage: `url(${thumbnailSrc})`,
+          backgroundImage: `url(${CoverPhotoUrl})`,
         }}
+
       />
       <div className="cs_portfolio_text">
         <h3 className="cs_portfolio_minititle cs_fs_16 cs_secondary_color cs_medium">
