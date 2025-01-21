@@ -1,108 +1,17 @@
 import React from 'react';
-import Spacing from '../Spacing';
-import SectionHeadingStyle3 from '../SectionHeading/SectionHeadingStyle3';
-import AboutStyle4 from '../About/AboutStyle4';
-import FunFact from '../FunFact';
-import AboutStyle5 from '../About/AboutStyle5';
-import IconBoxStyle6 from '../IconBox/IconBoxStyle6';
-import SectionHeadingStyle5 from '../SectionHeading/SectionHeadingStyle5';
-import SectionHeading from '../SectionHeading';
-import TeamSlider from '../Slider/TeamSlider';
-import Marquee from '../Marquee';
-import Brands from '../Brands';
+import { brandList, brandListDark, funfactData, teamData } from '../../constants';
 import { pageTitle } from '../../helpers/PageTitle';
-const funfactData = [
-  { title: 'Happy Customers', number: '22k' },
-  { title: 'Work’s Completed', number: '15k' },
-  { title: 'Skilled Team Members', number: '121' },
-  { title: 'Most Valuable Awards', number: '15' },
-];
-const teamData = [
-  {
-    memberImg: '/images/studio-agency/team_1.jpeg',
-    memberName: 'James Berline',
-    memberDesignation: 'React Developer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_2.jpeg',
-    memberName: 'Bella Zubena',
-    memberDesignation: 'Graphic Designer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_3.jpeg',
-    memberName: 'Kemnei Alekzend',
-    memberDesignation: 'Digital Marketer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_4.jpeg',
-    memberName: 'Juliya Jesmine',
-    memberDesignation: 'UX Researcher',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_1.jpeg',
-    memberName: 'James Berline',
-    memberDesignation: 'React Developer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_2.jpeg',
-    memberName: 'Bella Zubena',
-    memberDesignation: 'Graphic Designer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_3.jpeg',
-    memberName: 'Kemnei Alekzend',
-    memberDesignation: 'Digital Marketer',
-    href: '/team/team-details',
-  },
-  {
-    memberImg: '/images/studio-agency/team_4.jpeg',
-    memberName: 'Juliya Jesmine',
-    memberDesignation: 'UX Researcher',
-    href: '/team/team-details',
-  },
-];
-const brandList = [
-  {
-    logoSrc: '/images/marketing-agency/brand_1.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_2.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_3.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_4.svg',
-    logoAlt: 'Brand',
-  },
-];
-const brandListDark = [
-  {
-    logoSrc: '/images/marketing-agency/brand_1_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_2_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_3_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_4_dark.svg',
-    logoAlt: 'Brand',
-  },
-];
+import AboutStyle4 from '../About/AboutStyle4';
+import AboutStyle5 from '../About/AboutStyle5';
+import Brands from '../Brands';
+import FunFact from '../FunFact';
+import IconBoxStyle6 from '../IconBox/IconBoxStyle6';
+import Marquee from '../Marquee';
+import SectionHeading from '../SectionHeading';
+import SectionHeadingStyle3 from '../SectionHeading/SectionHeadingStyle3';
+import SectionHeadingStyle5 from '../SectionHeading/SectionHeadingStyle5';
+import TeamSlider from '../Slider/TeamSlider';
+import Spacing from '../Spacing';
 
 export default function AboutPage({ darkMode }) {
   pageTitle('About');
