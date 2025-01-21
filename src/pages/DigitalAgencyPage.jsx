@@ -16,45 +16,7 @@ import IconBoxStyle2 from '../components/IconBox/IconBoxStyle2';
 import PortfolioSlider from '../components/Slider/PortfolioSlider';
 import PricingTableList from '../components/PricingTable/PricingTableList';
 import { pageTitle } from '../helpers/PageTitle';
-
-
-
-const brandList = [
-  {
-    logoSrc: '/images/marketing-agency/brand_1.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_2.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_3.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_4.svg',
-    logoAlt: 'Brand',
-  },
-];
-const brandListDark = [
-  {
-    logoSrc: '/images/marketing-agency/brand_1_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_2_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_3_dark.svg',
-    logoAlt: 'Brand',
-  },
-  {
-    logoSrc: '/images/marketing-agency/brand_4_dark.svg',
-    logoAlt: 'Brand',
-  },
-];
+import { funfactData, brandList, brandListDark, portfolioData, postData, testimonialData } from '../constants';
 
 export default function DigitalAgencyPage({ darkMode }) {
   pageTitle('Home');
