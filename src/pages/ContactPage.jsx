@@ -2,7 +2,7 @@ import React from 'react';
 import Spacing from '../components/Spacing';
 import SectionHeadingStyle3 from '../components/SectionHeading/SectionHeadingStyle3';
 import { pageTitle } from '../helpers/PageTitle';
-import HubspotContactForm from '../components/Forms/hubSpotContactForm';
+import HubspotContactForm from '../components/Forms/hubSpotContactform';
 
 export default function ContactPage() {
   pageTitle('Contact');
