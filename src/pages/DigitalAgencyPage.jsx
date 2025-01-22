@@ -5,7 +5,7 @@ import HeroStyle4 from '../components/Hero/HeroStyle4';
 import Spacing from '../components/Spacing';
 import SectionHeading from '../components/SectionHeading';
 import PostGridStyle2 from '../components/PostGrid/PostGridStyle2';
-import PostGridTest from '../components/PostGrid/PostGridCustom';
+import PostGridTest from '../components/PostGrid/postGridCustom';
 import Brands from '../components/Brands';
 import Cta from '../components/Cta';
 import TestimonialSlider from '../components/Slider/TestimonialSlider';
