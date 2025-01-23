@@ -9,7 +9,13 @@ const ApiHandler = ({ baseUrl }) => {
       const response = await axios.get(`${baseUrl}/${endpoint}`);
       return response.data;
     } catch (error) {
-      setError(error);
+      // Attempt to fetch from local JSON file if the external API fails
+      try {
+        const localResponse = await fetch('/HomeData.json').then(res => res.json());
+        return localResponse; // Directly return the fetched JSON object
+      } catch (localError) {
+        setError(localError);
+      }
     }
   };
 
