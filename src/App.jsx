@@ -6,8 +6,8 @@ import DigitalAgencyPage from "./pages/DigitalAgencyPage";
 import ServicePage from "./pages/ServicePage";
 import AboutPage from "./pages/AboutPage";
 // import BlogPage from './pages/BlogPage';
-import BlogListPage from "./components/Pages/BlogListPage";
-import BlogDetailsPage from "./components/Pages/BlogDetailsPage";
+// import BlogListPage from "./components/Pages/BlogListPage";
+// import BlogDetailsPage from "./components/Pages/BlogDetailsPage";
 import PortfolioPage from "./components/Pages/PortfolioPage";
 import PortfolioDetailsPage from "./components/Pages/PortfolioDetailsPage";
 import CaseStudyDetailsPage from "./components/Pages/CaseStudyDetailsPage";
@@ -16,12 +16,12 @@ import TeamDetailsPage from "./components/Pages/TeamDetailsPage";
 import ContactPage from "./pages/ContactPage";
 import Layout2 from "./components/Layout/Layout2";
 import ServiceDetailsPage from "./components/Pages/ServiceDetailsPage";
-import Shop from "./components/Pages/Shop";
-import ProductDetails from "./components/Pages/Shop/ProductDetails";
-import Cart from "./components/Pages/Shop/Cart";
-import Checkout from "./components/Pages/Shop/Checkout";
-import Success from "./components/Pages/Shop/Success";
-import Wishlist from "./components/Pages/Shop/Wishlist";
+// import Shop from "./components/Pages/Shop";
+// import ProductDetails from "./components/Pages/Shop/ProductDetails";
+// import Cart from "./components/Pages/Shop/Cart";
+// import Checkout from "./components/Pages/Shop/Checkout";
+// import Success from "./components/Pages/Shop/Success";
+// import Wishlist from "./components/Pages/Shop/Wishlist";
 import Layout3 from "./components/Layout/Layout3";
 import ErrorPage from "./components/Pages/ErrorPage";
 
@@ -39,8 +39,8 @@ function App() {
             <Route path="service" element={<ServicePage />} />
             <Route path="service/:serviceDetailsId" element={<ServiceDetailsPage />} />
             {/* <Route path="blog" element={<BlogPage />} /> */}
-            <Route path="blog-list" element={<BlogListPage />} />
-            <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} />
+            {/* <Route path="blog-list" element={<BlogListPage />} />
+            <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} /> */}
             <Route path="portfolio" element={<PortfolioPage />} />
             <Route path="portfolio/:portfolioDetailsId" element={<PortfolioDetailsPage />} />
             <Route path="case-study-details" element={<CaseStudyDetailsPage />} />
@@ -51,14 +51,14 @@ function App() {
          <Route path="/" element={<Layout2 darkMode />}>
             <Route index element={<DigitalAgencyPage darkMode />} />
          </Route>
-         <Route path="/" element={<Layout3 darkMode />}>
+         {/* <Route path="/" element={<Layout3 darkMode />}>
             <Route path="shop" element={<Shop />} />
             <Route path="shop/:productId" element={<ProductDetails />} />
             <Route path="shop/cart" element={<Cart />} />
             <Route path="shop/checkout" element={<Checkout />} />
             <Route path="shop/success" element={<Success />} />
             <Route path="shop/wishlist" element={<Wishlist />} />
-         </Route>
+         </Route> */}
 
          {/* Start Light Mode */}
          <Route path="/light/" element={<Layout />}>
@@ -66,8 +66,8 @@ function App() {
             <Route path="service" element={<ServicePage />} />
             <Route path="service/:serviceDetailsId" element={<ServiceDetailsPage />} />
             {/* <Route path="blog" element={<BlogPage />} /> */}
-            <Route path="blog-list" element={<BlogListPage />} />
-            <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} />
+            {/* <Route path="blog-list" element={<BlogListPage />} />
+            <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} /> */}
             <Route path="portfolio" element={<PortfolioPage />} />
             <Route path="portfolio/:portfolioDetailsId" element={<PortfolioDetailsPage />} />
             <Route path="case-study-details" element={<CaseStudyDetailsPage />} />
