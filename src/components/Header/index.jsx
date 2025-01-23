@@ -56,7 +56,7 @@ export default function Header({ logoUrl, colorVariant, cart, actionBtnText, act
                                  </ul>
                               </DropDown>
                            </li>
-                           <li className="menu-item-has-children">
+                           {/* <li className="menu-item-has-children">
                               <Link to="blog">Blog</Link>
                               <DropDown>
                                  <ul>
@@ -71,8 +71,8 @@ export default function Header({ logoUrl, colorVariant, cart, actionBtnText, act
                                     </li>
                                  </ul>
                               </DropDown>
-                           </li>
-                           <li className="menu-item-has-children">
+                           </li> */}
+                           {/* <li className="menu-item-has-children">
                               <Link to="shop">Shop</Link>
                               <DropDown>
                                  <ul>
@@ -96,8 +96,8 @@ export default function Header({ logoUrl, colorVariant, cart, actionBtnText, act
                                     </li>
                                  </ul>
                               </DropDown>
-                           </li>
-                           <li className="menu-item-has-children">
+                           </li> */}
+                           {/* <li className="menu-item-has-children">
                               <Link to="/">Pages</Link>
                               <DropDown>
                                  <ul>
@@ -118,7 +118,7 @@ export default function Header({ logoUrl, colorVariant, cart, actionBtnText, act
                                     </li>
                                  </ul>
                               </DropDown>
-                           </li>
+                           </li> */}
                            <li>
                               <Link to="contact">Contact</Link>
                            </li>
