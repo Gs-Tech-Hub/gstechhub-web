@@ -36,7 +36,7 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <h3 className="cs_fs_29 cs_semibold">WhatsApp:</h3>
-                  <p className="mb-0">+44 7425 199941</p>
+                  <p className="mb-0">+44 7425 199 941</p>
                 </li>
               </ul>
             </div>
