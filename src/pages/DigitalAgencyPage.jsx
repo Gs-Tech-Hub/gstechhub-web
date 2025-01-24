@@ -62,8 +62,8 @@ export default function DigitalAgencyPage({ darkMode }) {
          <AboutStyle4
             thumbnailSrc="/images/digital-agency/about_1.png"
             miniTitle="Company Info"
-            title="Marketing agency for your business"
-            subTitle="our team specializes in strategic digital marketing, forging partnerships with the world's leading brands. We pride ourselves on breaking from the norm, pushing boundaries, and merging imaginative thinking with tangible results. Our innovative approach challenges conventional strategies, ensuring that our clients stand out in an increasingly competitive digital landscape."
+            title="We Build Smarter Systems for Nigerian Businesses"
+            subTitle="GS Tech Hub specializes in helping businesses like yours scale faster, streamline operations through automation, and attract more customers with cutting-edge technology solutions. Our team is dedicated to understanding your unique challenges and providing tailored strategies that drive growth, enhance customer engagement and much more. GS Tech Hub is your trusted partner for success in the ever-evolving digital landscape."
             btnText="See Our Services"
             btnUrl="/service"
          />
