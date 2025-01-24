@@ -28,11 +28,11 @@ export default function ContactPage() {
               <ul className="cs_mp0 cs_contact_info">
                 <li>
                   <h3 className="cs_fs_29 cs_semibold">Email:</h3>
-                  <p className="mb-0">info@oasis-digital.net</p>
+                  <p className="mb-0">info@gstechhub.com.ng</p>
                 </li>
                 <li>
                   <h3 className="cs_fs_29 cs_semibold">Phone:</h3>
-                  <p className="mb-0">+234 810 527 2050</p>
+                  <p className="mb-0">+234 815 561 9895</p>
                 </li>
                 <li>
                   <h3 className="cs_fs_29 cs_semibold">WhatsApp:</h3>
