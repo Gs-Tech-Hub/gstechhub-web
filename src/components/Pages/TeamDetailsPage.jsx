@@ -35,9 +35,7 @@ export default function TeamDetailsPage() {
                 exceptional web applications, James Berline has become an expert
                 in the field. As a freelance developer, they have worked with
                 clients from around the world, delivering high-quality solutions
-                that exceed her limit expectations. In their free time, James
-                Berline enjoys exploring new technologies and mentoring junior
-                developers. She love also song writing.
+                that exceed her limit expectations. 
               </p>
               <p>
                 Versatile developer with expertise in React and front-end
