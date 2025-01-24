@@ -2,9 +2,9 @@ import { Icon } from '@iconify/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 const addressDataList = [
-  '5553 Jay Path Apt. 908',
-  '+44 454 7800 112',
-  'info@zivan.net',
+  '+234 815 561 9895',
+  '+44 7425 199941',
+  'info@gstechhub.com.ng',
 ];
 const serviceMenuList = [
   {
@@ -174,7 +174,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="cs_copyright">Copyright © 2023 Laralink.</div>
+          <div className="cs_copyright">Copyright © 2023 GsTechHub Digital Agency.</div>
           <div className="cs_bottom_footer_right">
             <ul className="cs_footer_links cs_mp0">
               {policyMenuList.map((item, index) => (

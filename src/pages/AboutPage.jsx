@@ -1,17 +1,108 @@
 import React from 'react';
-import { brandList, brandListDark, funfactData, teamData } from '../../constants';
-import { pageTitle } from '../../helpers/PageTitle';
-import AboutStyle4 from '../About/AboutStyle4';
-import AboutStyle5 from '../About/AboutStyle5';
-import Brands from '../Brands';
-import FunFact from '../FunFact';
-import IconBoxStyle6 from '../IconBox/IconBoxStyle6';
-import Marquee from '../Marquee';
-import SectionHeading from '../SectionHeading';
-import SectionHeadingStyle3 from '../SectionHeading/SectionHeadingStyle3';
-import SectionHeadingStyle5 from '../SectionHeading/SectionHeadingStyle5';
-import TeamSlider from '../Slider/TeamSlider';
-import Spacing from '../Spacing';
+import Spacing from '../components/Spacing';
+import SectionHeadingStyle3 from '../components/SectionHeading/SectionHeadingStyle3';
+import AboutStyle4 from '../components/About/AboutStyle4';
+import FunFact from '../components/FunFact';
+import AboutStyle5 from '../components/About/AboutStyle5';
+import IconBoxStyle6 from '../components/IconBox/IconBoxStyle6';
+import SectionHeadingStyle5 from '../components/SectionHeading/SectionHeadingStyle5';
+import SectionHeading from '../components/SectionHeading';
+import TeamSlider from '../components/Slider/TeamSlider';
+import Marquee from '../components/Marquee';
+import Brands from '../components/Brands';
+import { pageTitle } from '../helpers/PageTitle';
+const funfactData = [
+  { title: 'Happy Customers', number: '22k' },
+  { title: 'Work’s Completed', number: '15k' },
+  { title: 'Skilled Team Members', number: '121' },
+  { title: 'Most Valuable Awards', number: '15' },
+];
+const teamData = [
+  {
+    memberImg: '/images/studio-agency/team_1.jpeg',
+    memberName: 'James Berline',
+    memberDesignation: 'React Developer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_2.jpeg',
+    memberName: 'Bella Zubena',
+    memberDesignation: 'Graphic Designer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_3.jpeg',
+    memberName: 'Kemnei Alekzend',
+    memberDesignation: 'Digital Marketer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_4.jpeg',
+    memberName: 'Juliya Jesmine',
+    memberDesignation: 'UX Researcher',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_1.jpeg',
+    memberName: 'James Berline',
+    memberDesignation: 'React Developer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_2.jpeg',
+    memberName: 'Bella Zubena',
+    memberDesignation: 'Graphic Designer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_3.jpeg',
+    memberName: 'Kemnei Alekzend',
+    memberDesignation: 'Digital Marketer',
+    href: '/team/team-details',
+  },
+  {
+    memberImg: '/images/studio-agency/team_4.jpeg',
+    memberName: 'Juliya Jesmine',
+    memberDesignation: 'UX Researcher',
+    href: '/team/team-details',
+  },
+];
+const brandList = [
+  {
+    logoSrc: '/images/marketing-agency/brand_1.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_2.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_3.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_4.svg',
+    logoAlt: 'Brand',
+  },
+];
+const brandListDark = [
+  {
+    logoSrc: '/images/marketing-agency/brand_1_dark.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_2_dark.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_3_dark.svg',
+    logoAlt: 'Brand',
+  },
+  {
+    logoSrc: '/images/marketing-agency/brand_4_dark.svg',
+    logoAlt: 'Brand',
+  },
+];
 
 export default function AboutPage({ darkMode }) {
   pageTitle('About');
@@ -95,7 +186,7 @@ export default function AboutPage({ darkMode }) {
         <Spacing lg="143" md="75" />
         <div className="container">
           <SectionHeading
-            title="Meet our experts team behind <br />the zivan agency"
+            title="Meet our experts team behind <br />Gs Tech Hub"
             subTitle="Our Team"
           />
           <Spacing lg="85" md="45" />
@@ -103,7 +194,6 @@ export default function AboutPage({ darkMode }) {
         <TeamSlider data={teamData} />
       </section>
       <Spacing lg="135" md="70" />
-      <Marquee text="We Create Design - Build App - Website - Branding - SEO" />
       <Spacing lg="84" md="50" />
       <div className="container">
         <Brands data={darkMode ? brandListDark : brandList} />
