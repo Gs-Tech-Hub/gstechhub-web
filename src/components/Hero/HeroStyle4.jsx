@@ -12,17 +12,16 @@ export default function HeroStyle4({ videoSrc, bgUrl, thumbnailSrc }) {
       <div className="container">
         <div className="cs_hero_text position-relative">
           <h1 className="cs_hero_title cs_fs_68">
-            Mastering Digital Realm, Exploring the Dynamic World of Our Digital
-            Studio
+            Why Are You Still Running Your Business Like It's 2010?
           </h1>
         </div>
         <div className="row align-items-center">
           <div className="col-lg-5">
             <div className="cs_hero_subtitle">
               <p className="mb-0">
-                Our agency offers a comprehensive suite of lots services,
-                including Branding, Advertising, Social marketing, Video making,
-                and Marketing analysis.
+              Your competitors are automating, growing, and running 24/7.
+              Let's make sure your business does the same with smarter
+              systems designed for results.
               </p>
               <a
                 href="/service"
