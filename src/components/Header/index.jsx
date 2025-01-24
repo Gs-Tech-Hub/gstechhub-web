@@ -136,7 +136,7 @@ export default function Header({
                     </DropDown>
                   </li>
                   <li>
-                    <Link to="contact">Contacts</Link>
+                    <Link to="contact">Contact</Link>
                   </li>
                 </ul>
                 <span
