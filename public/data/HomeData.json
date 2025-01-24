@@ -1,0 +1,87 @@
+{
+  "funfactData": [
+    { "title": "Happy Customers", "number": "22k" },
+    { "title": "Work's Completed", "number": "15k" },
+    { "title": "Skilled Team Members", "number": "121" },
+    { "title": "Most Valuable Awards", "number": "15" }
+  ],
+  "postData": [
+    {
+      "date": "05 Mar 2023",
+      "title": "How to keep fear from ruining your art business with confident",
+      "thumbnailSrc": "/images/studio-agency/post_2.jpeg",
+      "href": "/blog/blog-details"
+    },
+    {
+      "date": "07 Mar 2023",
+      "title": "Artistic mind will be great for creation anything",
+      "thumbnailSrc": "/images/studio-agency/post_1.jpeg",
+      "href": "/blog/blog-details"
+    },
+    {
+      "date": "03 Mar 2023",
+      "title": "How to keep fear from ruining your art business with confident",
+      "thumbnailSrc": "/images/studio-agency/post_3.jpeg",
+      "href": "/blog/blog-details"
+    },
+    {
+      "date": "02 Mar 2023",
+      "title": "How to keep fear from ruining your art business with confident",
+      "thumbnailSrc": "/images/studio-agency/post_4.jpeg",
+      "href": "/blog/blog-details"
+    }
+  ],
+  "brandList": [
+    {
+      "logoSrc": "/images/marketing-agency/brand_1.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_2.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_3.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_4.svg",
+      "logoAlt": "Brand"
+    }
+  ],
+  "brandListDark": [
+    {
+      "logoSrc": "/images/marketing-agency/brand_1_dark.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_2_dark.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_3_dark.svg",
+      "logoAlt": "Brand"
+    },
+    {
+      "logoSrc": "/images/marketing-agency/brand_4_dark.svg",
+      "logoAlt": "Brand"
+    }
+  ],
+  "testimonialData": [
+    {
+      "text": "Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.",
+      "avatarName": "Ansari Patron",
+      "avatarDesignation": "CEO at Delta"
+    },
+    {
+      "text": "Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.",
+      "avatarName": "Jhon Doe",
+      "avatarDesignation": "Manager at Delta"
+    },
+    {
+      "text": "Zivans Motion Graphics did an excellent job on my video related projects. The motion graphics added an extra layer of polish and really brought the video to life. I highly recommend their high quality services and work.",
+      "avatarName": "Ramatam Coo",
+      "avatarDesignation": "MD at Delta"
+    }
+  ]
+}  

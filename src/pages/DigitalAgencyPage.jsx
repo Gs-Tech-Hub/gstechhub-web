@@ -4,8 +4,7 @@ import ApiHandler from '../api/api';
 import HeroStyle4 from '../components/Hero/HeroStyle4';
 import Spacing from '../components/Spacing';
 import SectionHeading from '../components/SectionHeading';
-import PostGridStyle2 from '../components/PostGrid/PostGridStyle2';
-import PostGridTest from '../components/PostGrid/PostGridCustom';
+import PostGridCustom from '../components/PostGrid/postGridCustom';
 import Brands from '../components/Brands';
 import Cta from '../components/Cta';
 import TestimonialSlider from '../components/Slider/TestimonialSlider';
@@ -16,7 +15,7 @@ import IconBoxStyle2 from '../components/IconBox/IconBoxStyle2';
 import PortfolioSlider from '../components/Slider/PortfolioSlider';
 import PricingTableList from '../components/PricingTable/PricingTableList';
 import { pageTitle } from '../helpers/PageTitle';
-import { funfactData, brandList, brandListDark, portfolioData, postData, testimonialData } from '../constants';
+import { brandList, brandListDark } from '../constants';
 
 export default function DigitalAgencyPage({ darkMode }) {
   pageTitle('Home');
@@ -25,23 +24,24 @@ export default function DigitalAgencyPage({ darkMode }) {
   const [postData, setPostData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
   const [portfolioData, setPortfolioData] = useState([]);
+
   useEffect(() => {
-    fetchData();
+    // Fetch local data only
+    const fetchLocalData = async () => {
+      try {
+        const localData = await fetch('/data/HomeData.json').then(res => res.json());
+        setFunfactData(localData.funfactData);
+        setPostData(localData.postData);
+        setTestimonialData(localData.testimonialData);
+        setPortfolioData(localData.portfolioData || []); // Adjust based on actual structure
+      } catch (localError) {
+        console.error('Failed to fetch local data:', localError);
+      }
+    };
+
+    fetchLocalData();
   }, []);
 
-  const fetchData = async () => {
-    const funfacts = await api.fetchData('api/funfacts');
-    const posts = await api.fetchData('api/posts?api/posts?filters[is_featured][$eq]=true&fields[0]=title&fields[1]=createdAt&populate[coverphoto][fields][0]=name&populate[coverphoto][fields][1]=url');
-    const testimonial = await api.fetchData('api/testimonials?fields[0]=Name&fields[1]=Description&fields[2]=CompanyPosition')
-    const portfolio = await api.fetchData('api/portfolios?populate[CoverPhoto][fields][0]=name&populate[CoverPhoto][fields][1]=url&fields[0]=Title&fields[1]=miniTitle&fields[2]=SubTitle&fields[3]=urlSlug')
-    setFunfactData(funfacts);
-    setPostData(posts);
-    setTestimonialData(testimonial);
-    setPortfolioData(portfolio);
-  };
-
- 
-  
   return (
     <>
       <HeroStyle4
@@ -256,7 +256,7 @@ export default function DigitalAgencyPage({ darkMode }) {
         <div className="container">
           <SectionHeading title="Some recent news" subTitle="Our Blog" />
           <Spacing lg="85" md="45" />
-          <PostGridTest data={postData} />
+          <PostGridCustom data={postData} />
         </div>
       </section>
       <Spacing lg="135" md="70" />

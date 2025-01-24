@@ -5,9 +5,9 @@ import Home from './components/Pages/Home';
 import DigitalAgencyPage from './pages/DigitalAgencyPage';
 import ServicePage from './pages/ServicePage';
 import AboutPage from './pages/AboutPage';
-import BlogPage from './pages/BlogPage';
-import BlogListPage from './components/Pages/BlogListPage';
-import BlogDetailsPage from './components/Pages/BlogDetailsPage';
+// import BlogPage from './pages/BlogPage';
+// import BlogListPage from './components/Pages/BlogListPage';
+// import BlogDetailsPage from './components/Pages/BlogDetailsPage';
 import PortfolioPage from './components/Pages/PortfolioPage';
 import PortfolioDetailsPage from './components/Pages/PortfolioDetailsPage';
 import CaseStudyDetailsPage from './components/Pages/CaseStudyDetailsPage';
@@ -42,9 +42,9 @@ function App() {
           path="service/:serviceDetailsId"
           element={<ServiceDetailsPage />}
         />
-        <Route path="blog" element={<BlogPage />} />
+        {/* <Route path="blog" element={<BlogPage />} />
         <Route path="blog-list" element={<BlogListPage />} />
-        <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} />
+        <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} /> */}
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route
           path="portfolio/:portfolioDetailsId"
@@ -76,9 +76,9 @@ function App() {
           path="service/:serviceDetailsId"
           element={<ServiceDetailsPage />}
         />
-        <Route path="blog" element={<BlogPage />} />
+        {/* <Route path="blog" element={<BlogPage />} />
         <Route path="blog-list" element={<BlogListPage />} />
-        <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} />
+        <Route path="blog/:blogDetailsId" element={<BlogDetailsPage />} /> */}
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route
           path="portfolio/:portfolioDetailsId"
