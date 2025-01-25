@@ -120,9 +120,8 @@ export default function AboutPage({ darkMode }) {
       <AboutStyle4
         thumbnailSrc="/images/digital-agency/about_1.jpeg"
         miniTitle="Company Info"
-        title="Marketing agency for your business"
-        subTitle="Our team, specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and do merge imaginative thinking posible.
-        dolores eos qui ratione voluptatem lipe sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam ever the world lorem ipsum."
+        title="We Build Smarter Systems for Nigerian Businesses"
+        subTitle="GS Tech Hub specializes in helping businesses like yours scale faster, streamline operations through automation, and attract more customers with cutting-edge technology solutions. Our team is dedicated to understanding your unique challenges and providing tailored strategies that drive growth, enhance customer engagement and much more. GS Tech Hub is your trusted partner for success in the ever-evolving digital landscape."
         btnText="See Our Services"
         btnUrl="/service"
       />
@@ -136,7 +135,7 @@ export default function AboutPage({ darkMode }) {
         thumbnailSrc="/images/digital-agency/about_2.jpeg"
         miniTitle="What We Do"
         title="Best value service provider agency"
-        subTitle="We make specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and do merge imaginative thinking posible dolores."
+        subTitle="Gs Tech Hub transforms how Nigerian businesses operate. From building websites that sell to automating daily tasks, we give you the tools to work smarter, not harder."
         progressBarList={[
           { title: 'Digital Marketing', percentage: '75' },
           { title: 'Brand Strategy', percentage: '85' },
@@ -157,24 +156,24 @@ export default function AboutPage({ darkMode }) {
                 <IconBoxStyle6
                   bgSrc="/images/others/process_1.png"
                   iconSrc="/images/icons/search.svg"
-                  title="Research"
-                  subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem own disilope accusantium doloremque laudantium, totam remen."
+                  title="We Listen"
+                  subTitle="Your challanges are unique, so we start by understanding your goals."
                 />
               </div>
               <div className="cs_working_process_col">
                 <IconBoxStyle6
                   bgSrc="/images/others/process_2.png"
                   iconSrc="/images/icons/idea.svg"
-                  title="Idea Generate"
-                  subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem own disilope accusantium doloremque laudantium, totam remen."
+                  title="We Plan"
+                  subTitle="Our experts create a customized roadmap tailored to ypur business."
                 />
               </div>
               <div className="cs_working_process_col">
                 <IconBoxStyle6
                   bgSrc="/images/others/process_3.png"
                   iconSrc="/images/icons/gear.svg"
-                  title="Implement"
-                  subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem own disilope accusantium doloremque laudantium, totam remen."
+                  title="We Deliver"
+                  subTitle="From setup to training, we handle everything, ensuring you see results fast."
                 />
               </div>
             </div>
