@@ -39,30 +39,30 @@ const whyChoseFeatureData = [
 ];
 const serviceListData = [
   {
-    title: 'WP Development',
+    title: 'Web Development',
     subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'Fast, mobile-friendly websites optimized for sales.',
     imgUrl: '/images/creative-agency/service_7.jpeg',
     href: '/service/service-details',
   },
   {
-    title: 'UI/UX Design',
+    title: 'Business Automation',
     subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'CRM, inventory, and accounting systems built for your needs',
     imgUrl: '/images/creative-agency/service_8.jpeg',
     href: '/service/service-details',
   },
   {
-    title: 'Branding',
+    title: 'SEO & Visibility',
     subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'Get found online with local search optimization.',
     imgUrl: '/images/creative-agency/service_9.jpeg',
     href: '/service/service-details',
   },
   {
-    title: 'Social Ad Campaign',
+    title: 'Backup Power & Security',
     subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'Systems that keep your business operational no matter what',
     imgUrl: '/images/creative-agency/service_10.jpeg',
     href: '/service/service-details',
   },
