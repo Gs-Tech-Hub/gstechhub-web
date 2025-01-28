@@ -37,29 +37,29 @@ export default function ServiceDetailsPage() {
                 <div className="col-sm-6">
                   <CardStyle3
                     number="01"
-                    title="Keywords"
-                    subTitle="One provide moment. Interesting an a upse you side it all the and don't listen. Cnfiden picture she one the what I nor least absolutes heavily polimer."
+                    title="Web Development"
+                    subTitle="Fast, mobile-friendly websites optimized for sales"
                   />
                 </div>
                 <div className="col-sm-6">
                   <CardStyle3
                     number="02"
-                    title="SEO Writing"
-                    subTitle="One provide moment. Interesting an a upse you side it all the and don't listen. Cnfiden picture she one the what I nor least absolutes heavily polimer."
+                    title="Business Automation"
+                    subTitle="CRM, inventory, and accounting systems built for your needs"
                   />
                 </div>
                 <div className="col-sm-6">
                   <CardStyle3
                     number="03"
-                    title="Visual Assets"
-                    subTitle="One provide moment. Interesting an a upse you side it all the and don't listen. Cnfiden picture she one the what I nor least absolutes heavily polimer."
+                    title="SEO & Visibility"
+                    subTitle="Get found online with local search optimization."
                   />
                 </div>
                 <div className="col-sm-6">
                   <CardStyle3
                     number="04"
-                    title="Image Optimization"
-                    subTitle="One provide moment. Interesting an a upse you side it all the and don't listen. Cnfiden picture she one the what I nor least absolutes heavily polimer."
+                    title="Backup Power & Security"
+                    subTitle="Systems that keep your business operational no matter what"
                   />
                 </div>
               </div>
