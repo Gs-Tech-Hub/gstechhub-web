@@ -3,10 +3,10 @@ import { useState } from 'react';
 import PricingTable from '.';
 
 export default function PricingTableList() {
-  const [tab, setTab] = useState('monthly');
+  const [tab, setTab] = useState('yearly');
   return (
     <div className="cs_tabs cs_style1">
-      <ul className="cs_tab_links cs_style1 cs_mp0 cs_pricing_control">
+     {/* <ul className="cs_tab_links cs_style1 cs_mp0 cs_pricing_control">
         <li
           className={tab === 'monthly' ? 'active' : ''}
           onClick={() => setTab('monthly')}
@@ -20,10 +20,10 @@ export default function PricingTableList() {
         >
           <span>Yearly</span>
         </li>
-      </ul>
+      </ul> */}
       <div className="row cs_gap_y_30">
-        <div className="col-lg-4">
-          {tab === 'monthly' && (
+        <div className="col-lg-5 ms-5">
+        {/*   {tab === 'monthly' && (
             <PricingTable
               title="Silver"
               subTitle="Control your choices for effective business growth and more customers."
@@ -39,27 +39,26 @@ export default function PricingTableList() {
               btnText="Choose Packedge"
               btnLink="/"
             />
-          )}
+          )} */}
           {tab === 'yearly' && (
             <PricingTable
-              title="Silver"
+              title="Executive Package"
               subTitle="Control your choices for effective business growth and more customers."
-              price="499"
+              price="500"
               currency="$"
               timeline="yearly"
               features={[
-                'Limited content',
-                'Ad campaign',
-                'Branding consultancy',
-                'Video ad banner',
+                'Everything you need to automate your core operations',
+                'No hidden charges, no suprise fees',
+                'Full setup and training included',
               ]}
-              btnText="Choose Packedge"
+              btnText="Choose Package"
               btnLink="/"
             />
           )}
         </div>
-        <div className="col-lg-4">
-          {tab === 'monthly' && (
+        <div className="col-lg-5 ms-5">
+        {/*  {tab === 'monthly' && (
             <PricingTable
               title="Gold"
               subTitle="Control your choices for effective business growth and more customers."
@@ -76,27 +75,25 @@ export default function PricingTableList() {
               btnLink="/"
               popular
             />
-          )}
+          )} */}
           {tab === 'yearly' && (
             <PricingTable
-              title="Gold"
+              title="Premium Package"
               subTitle="Control your choices for effective business growth and more customers."
-              price="649"
+              price="1,500"
               currency="$"
               timeline="yearly"
               features={[
-                'Limited content',
-                'Social ad campaign',
-                'Premium consultancy',
-                'Secret strategy',
+                'Complete business automation',
+                'Piority support',
+                'Custom features for your specific needs',
               ]}
-              btnText="Choose Packedge"
+              btnText="Choose Package"
               btnLink="/"
-              popular
             />
           )}
         </div>
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
           {tab === 'monthly' && (
             <PricingTable
               title="Platinum"
@@ -131,7 +128,7 @@ export default function PricingTableList() {
               btnLink="/"
             />
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

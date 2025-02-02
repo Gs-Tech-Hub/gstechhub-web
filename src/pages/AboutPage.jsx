@@ -165,7 +165,7 @@ export default function AboutPage({ darkMode }) {
                   bgSrc="/images/others/process_2.png"
                   iconSrc="/images/icons/idea.svg"
                   title="We Plan"
-                  subTitle="Our experts create a customized roadmap tailored to ypur business."
+                  subTitle="Our experts create a customized roadmap tailored to your business."
                 />
               </div>
               <div className="cs_working_process_col">
