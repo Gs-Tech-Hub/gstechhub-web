@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 const addressDataList = ["+234 815 561 9895", "+44 7425 199941", "info@gstechhub.com.ng"];
 const serviceMenuList = [
@@ -78,7 +79,46 @@ const socialBtnList = [
       href: "/",
    },
 ];
+
 export default function Footer() {
+   const {
+      register,
+      handleSubmit,
+      formState: { errors },
+   } = useForm({
+      defaultValues: {
+         email: "",
+      },
+   });
+
+   console.log("lfg 🚀");
+
+   const handleSubscribe = async (data) => {
+      try {
+         const res = await fetch(
+            "https://script.google.com/macros/s/AKfycbxyVfePxgQEt2ipfraxM1mKboG5-75SQBLPdKgrZfiSHS1nQ2YDNOlkEO0lBkDK22mmqQ/exec",
+            {
+               method: "POST",
+               mode: "no-cors",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify(data),
+            },
+         );
+
+         if (!res.ok) {
+            const errorText = await res.text();
+            console.error("Error sending data:", errorText);
+         } else {
+            const result = await res.json();
+            console.log("Data sent successfully:", result);
+         }
+      } catch (error) {
+         console.error("Error sending data:", error);
+      }
+   };
+
    return (
       <footer className="cs_fooer cs_bg_filed" style={{ backgroundImage: "url(/images/footer_bg.jpeg)" }}>
          <div className="cs_fooer_main">
@@ -127,8 +167,13 @@ export default function Footer() {
                            <div className="cs_newsletter_text">
                               We make sure to only send emails that are noteworthy and pertinent to the recipient.
                            </div>
-                           <form action="#" className="cs_newsletter_form">
-                              <input type="email" className="cs_newsletter_input" placeholder="Email address" />
+                           <form action="" onSubmit={handleSubmit(handleSubscribe)} className="cs_newsletter_form">
+                              <input
+                                 type="email"
+                                 className="cs_newsletter_input"
+                                 placeholder="Email address"
+                                 {...register("email", { required: "Provide a valid email" })}
+                              />
                               <button className="cs_btn cs_style_1">
                                  Submit
                                  <span>
@@ -140,6 +185,7 @@ export default function Footer() {
                                     </i>
                                  </span>
                               </button>
+                              {errors.email && <p>{errors.email.message}</p>}
                            </form>
                         </div>
                      </div>
