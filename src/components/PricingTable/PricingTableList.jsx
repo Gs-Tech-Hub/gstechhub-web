@@ -21,8 +21,8 @@ export default function PricingTableList() {
           <span>Yearly</span>
         </li>
       </ul> */}
-      <div className="row cs_gap_y_30">
-        <div className="col-lg-5 ms-5">
+      <div className="row cs_gap_y_30 mx-auto">
+        <div className="col-lg-5">
         {/*   {tab === 'monthly' && (
             <PricingTable
               title="Silver"
@@ -57,7 +57,7 @@ export default function PricingTableList() {
             />
           )}
         </div>
-        <div className="col-lg-5 ms-5">
+        <div className="col-lg-5">
         {/*  {tab === 'monthly' && (
             <PricingTable
               title="Gold"
