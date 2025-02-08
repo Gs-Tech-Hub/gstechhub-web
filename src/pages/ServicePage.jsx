@@ -10,44 +10,44 @@ import { pageTitle } from '../helpers/PageTitle';
 const serviceData = [
   {
     number: '01',
-    title: 'Web & Mobile App Development',
+    title: 'Web Development',
     subTitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'A professional, conversion-focused online presence.',
     thumbnailSrc: '/images/studio-agency/service_img_1.jpeg',
     href: '/service/service-details',
   },
   {
     number: '02',
-    title: 'Branding Design',
+    title: 'Business Automation',
     subTitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'CRM, HR, and inventory systems built for smoother operations.',
     thumbnailSrc: '/images/studio-agency/service_img_2.jpeg',
     href: '/service/service-details',
   },
   {
     number: '03',
-    title: 'UI/UX Design',
+    title: 'SEO Optimization',
     subTitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'Ensure customers find your business online easily.',
     thumbnailSrc: '/images/studio-agency/service_img_3.jpeg',
     href: '/service/service-details',
   },
   {
     number: '04',
-    title: 'web Page Optimization',
+    title: 'Backup Power Systems',
     subTitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+      'Keep your business running during outages.',
     thumbnailSrc: '/images/studio-agency/service_img_4.jpeg',
     href: '/service/service-details',
   },
-  {
-    number: '05',
-    title: 'Front-End Development',
-    subTitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
-    thumbnailSrc: '/images/studio-agency/service_img_5.jpeg',
-    href: '/service/service-details',
-  },
+  //{
+    //number: '05',
+    //title: 'Front-End Development',
+    //subTitle:
+      //'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
+    //thumbnailSrc: '/images/studio-agency/service_img_5.jpeg',
+  //  href: '/service/service-details',
+//  },
 ];
 
 export default function ServicePage() {
@@ -57,7 +57,7 @@ export default function ServicePage() {
       <Spacing lg="70" md="70" />
       <Spacing lg="140" md="80" />
       <SectionHeadingStyle3
-        title="Empowering Your Business with Comprehensive Services"
+        title="GS Tech Hub offers solutions that drive growth and save time."
         subTitle="Our Services"
         shape="shape_2"
       />
