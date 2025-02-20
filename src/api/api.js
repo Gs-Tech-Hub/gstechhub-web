@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ApiHandler = ({ baseUrl }) => {
+const ApiHandler = ({ baseUrl, localFallbackPath }) => {
   const [error, setError] = useState(null);
 
   const fetchData = async (endpoint) => {
+    const constructedUrl = `${baseUrl}/${endpoint}`;
+    console.log('Attempting to fetch from:', constructedUrl);
+    
     try {
-      const response = await axios.get(`${baseUrl}/${endpoint}`);
+      const response = await axios.get(constructedUrl);
       return response.data;
     } catch (error) {
       // Attempt to fetch from local JSON file if the external API fails
       try {
-        const localResponse = await fetch('/HomeData.json').then(res => res.json());
-        return localResponse; // Directly return the fetched JSON object
+        const localPath = localFallbackPath || `/${endpoint}.json`;
+        console.log('Falling back to local path:', localPath);
+        const localResponse = await fetch(localPath).then(res => res.json());
+        return localResponse;
       } catch (localError) {
         setError(localError);
       }
