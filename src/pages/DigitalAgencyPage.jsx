@@ -16,30 +16,47 @@ import PortfolioSlider from "../components/Slider/PortfolioSlider";
 import PricingTableList from "../components/PricingTable/PricingTableList";
 import { pageTitle } from "../helpers/PageTitle";
 import { brandList, brandListDark } from "../constants";
+import IconBoxStyle4 from '../components/IconBox/IconboxStyle4';
+
 
 export default function DigitalAgencyPage({ darkMode }) {
    pageTitle("Home");
-   const api = ApiHandler({ baseUrl: "http://localhost:1337" });
+   const serviceApi = ApiHandler({ 
+     baseUrl: 'https://gstechhub-api.onrender.com/api',
+     localFallbackPath: '/data/services.json'
+   });
    const [funfactData, setFunfactData] = useState([]);
-   const [postData, setPostData] = useState([]);
+   const [postData, setPostData] = useState([]); 
    const [testimonialData, setTestimonialData] = useState([]);
    const [portfolioData, setPortfolioData] = useState([]);
+   const [services, setServices] = useState([]);
 
    useEffect(() => {
-      // Fetch local data only
-      const fetchLocalData = async () => {
+      const fetchData = async () => {
          try {
+            // Fetch local data
             const localData = await fetch("/data/HomeData.json").then((res) => res.json());
             setFunfactData(localData.funfactData);
             setPostData(localData.postData);
             setTestimonialData(localData.testimonialData);
-            setPortfolioData(localData.portfolioData || []); // Adjust based on actual structure
-         } catch (localError) {
-            console.error("Failed to fetch local data:", localError);
+            setPortfolioData(localData.portfolioData || []); 
+
+            const endpoint = 'services-overview?populate[service_categories][populate][services]=*';
+            console.log('Requesting services with endpoint:', endpoint);
+            
+            const servicesData = await serviceApi.fetchData(endpoint);
+            console.log('Services Data:', JSON.stringify(servicesData, null, 2));
+            
+            // Extract the service categories array
+            const serviceCategories = servicesData?.data?.attributes?.service_categories?.data || [];
+            setServices(serviceCategories);
+         } catch (error) {
+            console.error("Failed to fetch data:", error);
+            setServices([]);
          }
       };
 
-      fetchLocalData();
+      fetchData();
    }, []);
 
    return (
@@ -86,71 +103,37 @@ export default function DigitalAgencyPage({ darkMode }) {
             <Spacing lg="143" md="75" />
             <div className="container">
                <SectionHeading
-                  title="Exceeding expectations our <br />service is our promise"
+                  title="Exceeding expectations <br /> Our service is our promise"
                   subTitle="Services"
                   variantColor="cs_white_color"
                />
                <Spacing lg="85" md="45" />
                <div className="row cs_gap_y_45">
-                  <div className="col-lg-3 col-sm-6">
-                     <IconBoxStyle2
-                        iconSrc="/images/digital-agency/service_icon_1.svg"
-                        title="Brand Stratege"
-                        subTitle="Brand's strategy and insights are a forward-thinking blueprint for success."
-                        features={[
-                           "Business Development",
-                           "Research & Branding",
-                           "Strategy Services",
-                           "Business Consulting",
-                           "Idea Generate",
-                           "Search Engine Optimize",
-                        ]}
-                     />
-                  </div>
-                  <div className="col-lg-3 col-sm-6">
-                     <IconBoxStyle2
-                        iconSrc="/images/digital-agency/service_icon_2.svg"
-                        title="UI/UX Design"
-                        subTitle="Help reinforce your brand's identity & cultivate positive user behaviors."
-                        features={[
-                           "UX Research",
-                           "Trend Analysis",
-                           "A/B Testing",
-                           "Information Architecture",
-                           "Mockup Design",
-                           "Color Analysis",
-                        ]}
-                     />
-                  </div>
-                  <div className="col-lg-3 col-sm-6">
-                     <IconBoxStyle2
-                        iconSrc="/images/digital-agency/service_icon_3.svg"
-                        title="Animation"
-                        subTitle="Bringing stories to life the power of modern age animation."
-                        features={[
-                           "Idea Generate",
-                           "Story Writing",
-                           "White Board Animation",
-                           "Advertise Animation",
-                           "Video Editing",
-                        ]}
-                     />
-                  </div>
-                  <div className="col-lg-3 col-sm-6">
-                     <IconBoxStyle2
-                        iconSrc="/images/digital-agency/service_icon_4.svg"
-                        title="Web Development"
-                        subTitle="Exploring the World of Web Development in zivan digital agency."
-                        features={[
-                           "UI/UX Design",
-                           "React Application",
-                           "eCommerce Development",
-                           "Business Website",
-                           "App Development",
-                           "Web Application",
-                        ]}
-                     />
-                  </div>
+                  {Array.isArray(services) ? services.map((service, index) => {
+                     // Rotate through different default icons
+                     const fallbackIcons = [
+                        "/images/digital-agency/service_icon_1.svg",
+                        "/images/digital-agency/service_icon_2.svg",
+                        "/images/digital-agency/computer-monitor.svg",
+                        "/images/digital-agency/service_icon_4.svg"
+                     ];
+                     const fallbackIcon = fallbackIcons[index % fallbackIcons.length];
+
+                     return (
+                        <div className="col-lg-4" key={service.id}>
+                           <IconBoxStyle4
+                              iconSrc={service.attributes.icon?.data?.attributes?.url || fallbackIcon}
+                              title={service.attributes.title}
+                              subTitle={service.attributes.description}
+                              features={service.attributes.services?.data?.map(item => item.attributes.title) || []}
+                              btnUrl={`/service/${service.id}`}
+                              btnText="Learn More"
+                           />
+                        </div>
+                     );
+                  }) : (
+                     <div>Loading services...</div>
+                  )}
                </div>
             </div>
             <Spacing lg="143" md="75" />
