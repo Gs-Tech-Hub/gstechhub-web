@@ -223,7 +223,7 @@ export default function DigitalAgencyPage({ darkMode }) {
          <Spacing lg="135" md="70" />
          <Spacing lg="84" md="50" />
          <div className="container">
-            <Brands data={darkMode ? brandListDark : brandList} />
+            {/* <Brands data={darkMode ? brandListDark : brandList} /> */}
          </div>
          <Spacing lg="135" md="80" />
       </>

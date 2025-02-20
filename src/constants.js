@@ -1,8 +1,8 @@
 export const funfactData = [
-  { title: 'Happy Customers', number: '22k' },
-  { title: 'Work’s Completed', number: '15k' },
-  { title: 'Skilled Team Members', number: '121' },
-  { title: 'Most Valuable Awards', number: '15' },
+  { title: 'Happy Customers', number: '22' },
+  { title: 'Work’s Completed', number: '1k' },
+  { title: 'Skilled Team Members', number: '12' },
+  { title: 'Most Valuable Awards', number: '1' },
 ];
 export const postData = [
   {
