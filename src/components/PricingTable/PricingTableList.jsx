@@ -53,7 +53,7 @@ export default function PricingTableList() {
                 'Full setup and training included',
               ]}
               btnText="Choose Package"
-              btnLink="/"
+              btnLink="/contact"
             />
           )}
         </div>
@@ -89,7 +89,7 @@ export default function PricingTableList() {
                 'Custom features for your specific needs',
               ]}
               btnText="Choose Package"
-              btnLink="/"
+              btnLink="/contact"
             />
           )}
         </div>
