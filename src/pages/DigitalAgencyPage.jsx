@@ -38,8 +38,28 @@ export default function DigitalAgencyPage({ darkMode }) {
             const localData = await fetch("/data/HomeData.json").then((res) => res.json());
             setFunfactData(localData.funfactData);
             setPostData(localData.postData);
-            setTestimonialData(localData.testimonialData);
             setPortfolioData(localData.portfolioData || []); 
+
+            // Fetch testimonials from API
+            const testimonialResponse = await serviceApi.fetchData('testimonials');
+            console.log('Raw Testimonials Response:', testimonialResponse);
+
+            // Ensure we're working with an array and transform the data
+            const testimonialItems = Array.isArray(testimonialResponse?.data) 
+               ? testimonialResponse.data 
+               : [];
+
+            // Transform the testimonial data to match the expected format
+            const formattedTestimonials = testimonialItems.map(item => ({
+               text: item.attributes?.Description || '',
+               avatarName: item.attributes?.Name || '',
+               avatarDesignation: item.attributes?.CompanyPosition && item.attributes?.NameOfCompany
+                  ? `${item.attributes.CompanyPosition} at ${item.attributes.NameOfCompany}`
+                  : ''
+            }));
+
+            console.log('Formatted Testimonials Array:', formattedTestimonials);
+            setTestimonialData(formattedTestimonials);
 
             const endpoint = 'services-overview?populate[service_categories][populate][services]=*';
             console.log('Requesting services with endpoint:', endpoint);
@@ -53,6 +73,7 @@ export default function DigitalAgencyPage({ darkMode }) {
          } catch (error) {
             console.error("Failed to fetch data:", error);
             setServices([]);
+            setTestimonialData([]); // Set empty array on error
          }
       };
 

@@ -3,7 +3,11 @@ import Testimonial from '../Testimonial';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-export default function TestimonialSlider({  data }) {
+export default function TestimonialSlider({ data = [] }) {
+  const testimonials = Array.isArray(data) ? data : [];
+  
+  console.log('Testimonial Data:', testimonials);
+
   return (
     <div>
       <div className="cs_height_150 cs_height_lg_80" />
@@ -86,15 +90,18 @@ export default function TestimonialSlider({  data }) {
             <div className="col-lg-8 offset-lg-2">
               <Swiper
                 slidesPerView={1}
-                loop={true}
+                loop={testimonials.length > 1}
                 speed={1000}
                 modules={[Navigation]}
                 navigation={{
                   nextEl: '.cs_swiper_next',
                   prevEl: '.cs_swiper_prev',
                 }}
+                observer={true}
+                observeParents={true}
+                watchOverflow={true}
               >
-                {data?.map((item, index) => (
+                {testimonials.map((item, index) => (
                   <SwiperSlide key={index}>
                     <Testimonial {...item} />
                   </SwiperSlide>
