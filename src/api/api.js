@@ -6,7 +6,6 @@ const ApiHandler = ({ baseUrl, localFallbackPath }) => {
 
   const fetchData = async (endpoint) => {
     const constructedUrl = `${baseUrl}/${endpoint}`;
-    console.log('Attempting to fetch from:', constructedUrl);
     
     try {
       const response = await axios.get(constructedUrl);
@@ -15,7 +14,6 @@ const ApiHandler = ({ baseUrl, localFallbackPath }) => {
       // Attempt to fetch from local JSON file if the external API fails
       try {
         const localPath = localFallbackPath || `/${endpoint}.json`;
-        console.log('Falling back to local path:', localPath);
         const localResponse = await fetch(localPath).then(res => res.json());
         return localResponse;
       } catch (localError) {

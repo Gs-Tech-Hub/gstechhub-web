@@ -42,7 +42,6 @@ export default function DigitalAgencyPage({ darkMode }) {
 
             // Fetch testimonials from API
             const testimonialResponse = await serviceApi.fetchData('testimonials');
-            console.log('Raw Testimonials Response:', testimonialResponse);
 
             // Ensure we're working with an array and transform the data
             const testimonialItems = Array.isArray(testimonialResponse?.data) 
@@ -58,14 +57,10 @@ export default function DigitalAgencyPage({ darkMode }) {
                   : ''
             }));
 
-            console.log('Formatted Testimonials Array:', formattedTestimonials);
             setTestimonialData(formattedTestimonials);
 
             const endpoint = 'services-overview?populate[service_categories][populate][services]=*';
-            console.log('Requesting services with endpoint:', endpoint);
-            
             const servicesData = await serviceApi.fetchData(endpoint);
-            console.log('Services Data:', JSON.stringify(servicesData, null, 2));
             
             // Extract the service categories array
             const serviceCategories = servicesData?.data?.attributes?.service_categories?.data || [];
