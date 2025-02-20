@@ -124,7 +124,7 @@ export default function DigitalAgencyPage({ darkMode }) {
             <Spacing lg="143" md="75" />
             <div className="container">
                <SectionHeading
-                  title="Exceeding expectations <br /> Our service is our promise"
+                  title="Exceeding your expectations <br /> Our service, our promise"
                   subTitle="Services"
                   variantColor="cs_white_color"
                />
