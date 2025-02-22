@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "service_categories": {
+        "data": [
+          {
+            "id": 1,
+            "attributes": {
+              "title": "Web Development",
+              "description": "A professional, conversion-focused online presence.",
+              "thumbnail": {
+                "data": {
+                  "attributes": {
+                    "url": "/images/studio-agency/service_img_1.jpeg"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 2,
+            "attributes": {
+              "title": "Business Automation",
+              "description": "CRM, HR, and inventory systems built for smoother operations.",
+              "thumbnail": {
+                "data": {
+                  "attributes": {
+                    "url": "/images/studio-agency/service_img_2.jpeg"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 3,
+            "attributes": {
+              "title": "SEO Optimization",
+              "description": "Ensure customers find your business online easily.",
+              "thumbnail": {
+                "data": {
+                  "attributes": {
+                    "url": "/images/studio-agency/service_img_3.jpeg"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 4,
+            "attributes": {
+              "title": "Backup Power Systems",
+              "description": "Keep your business running during outages.",
+              "thumbnail": {
+                "data": {
+                  "attributes": {
+                    "url": "/images/studio-agency/service_img_4.jpeg"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

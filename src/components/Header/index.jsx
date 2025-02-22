@@ -37,24 +37,14 @@ export default function Header({ logoUrl, colorVariant, cart, actionBtnText, act
                      <div className="cs_nav cs_medium cs_primary_font">
                         <ul className={`${mobileToggle ? "cs_nav_list cs_active" : "cs_nav_list"}`}>
                            <li>
-                              <Link to="/digital-agency">Home</Link>
+                              <Link to="/home">Home</Link>
                            </li>
 
                            <li>
                               <Link to="about">About</Link>
                            </li>
-                           <li className="menu-item-has-children">
+                           <li>
                               <Link to="service">Service</Link>
-                              <DropDown>
-                                 <ul>
-                                    <li>
-                                       <Link to="service">Service</Link>
-                                    </li>
-                                    <li>
-                                       <Link to="service/service-details">Service Details</Link>
-                                    </li>
-                                 </ul>
-                              </DropDown>
                            </li>
                            <li>
                               <Link to="contact">Contact</Link>

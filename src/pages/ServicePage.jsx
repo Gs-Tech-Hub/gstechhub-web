@@ -1,57 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Spacing from '../components/Spacing';
 import SectionHeadingStyle3 from '../components/SectionHeading/SectionHeadingStyle3';
 import ServiceStyle2 from '../components/Service/ServiceStyle2';
-import Service from '../components/Service';
 import SectionHeading from '../components/SectionHeading';
 import PricingTableList from '../components/PricingTable/PricingTableList';
 import CtaStyle2 from '../components/Cta/CtaStyle2';
 import { pageTitle } from '../helpers/PageTitle';
-const serviceData = [
-  {
-    number: '01',
-    title: 'Web Development',
-    subTitle:
-      'A professional, conversion-focused online presence.',
-    thumbnailSrc: '/images/studio-agency/service_img_1.jpeg',
-    href: '/service/service-details',
-  },
-  {
-    number: '02',
-    title: 'Business Automation',
-    subTitle:
-      'CRM, HR, and inventory systems built for smoother operations.',
-    thumbnailSrc: '/images/studio-agency/service_img_2.jpeg',
-    href: '/service/service-details',
-  },
-  {
-    number: '03',
-    title: 'SEO Optimization',
-    subTitle:
-      'Ensure customers find your business online easily.',
-    thumbnailSrc: '/images/studio-agency/service_img_3.jpeg',
-    href: '/service/service-details',
-  },
-  {
-    number: '04',
-    title: 'Backup Power Systems',
-    subTitle:
-      'Keep your business running during outages.',
-    thumbnailSrc: '/images/studio-agency/service_img_4.jpeg',
-    href: '/service/service-details',
-  },
-  //{
-    //number: '05',
-    //title: 'Front-End Development',
-    //subTitle:
-      //'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totam rem aperiam, eaque ipsa quae.',
-    //thumbnailSrc: '/images/studio-agency/service_img_5.jpeg',
-  //  href: '/service/service-details',
-//  },
-];
+import ApiHandler from '../api/api';
 
 export default function ServicePage() {
+  const [services, setServices] = useState([]);
+  const serviceApi = ApiHandler({
+    baseUrl: 'https://gstechhub-api.onrender.com/api',
+    localFallbackPath: '/data/services.json'
+  });
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const endpoint = 'services-overview?populate[service_categories][populate][services]=*';
+        const servicesData = await serviceApi.fetchData(endpoint);
+        
+        // Transform the API data to match ServiceStyle2's expected format
+        const transformedServices = servicesData?.data?.attributes?.service_categories?.data?.map((category, index) => {
+          // Rotate through different default icons
+          const fallbackIcons = [
+            "/images/digital-agency/digitalService2.png",
+            "/images/digital-agency/digitalService3.png",
+            "/images/digital-agency/digitalService4.png"
+          ];
+          const fallbackIcon = fallbackIcons[index % fallbackIcons.length];
+
+          return {
+            number: `0${index + 1}`,
+            title: category.attributes.title,
+            subTitle: category.attributes.description,
+            thumbnailSrc: category.attributes.thumbnail?.data?.attributes?.url || fallbackIcon,
+            href: `/service/${category.id}`
+          };
+        }) || [];
+
+        setServices(transformedServices);
+      } catch (error) {
+        console.error("Failed to fetch services:", error);
+        setServices([]);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
   pageTitle('Service');
+  
   return (
     <>
       <Spacing lg="70" md="70" />
@@ -63,7 +63,7 @@ export default function ServicePage() {
       />
       <Spacing lg="75" md="60" />
       <div className="container">
-        <Service data={serviceData} />
+        <ServiceStyle2 data={services} />
       </div>
       <Spacing lg="150" md="80" />
       <section className="cs_gray_bg_2 cs_shape_animation_2">
