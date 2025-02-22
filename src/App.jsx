@@ -8,7 +8,7 @@ import ErrorPage from "./components/Pages/ErrorPage";
 import Home from "./components/Pages/Home";
 import PortfolioDetailsPage from "./components/Pages/PortfolioDetailsPage";
 import PortfolioPage from "./components/Pages/PortfolioPage";
-import ServiceDetailsPage from "./components/Pages/ServiceDetailsPage";
+import ServiceDetailsPage from "./pages/ServiceDetailsPage";
 import Shop from "./components/Pages/Shop";
 import Cart from "./components/Pages/Shop/Cart";
 import Checkout from "./components/Pages/Shop/Checkout";
@@ -31,7 +31,7 @@ function App() {
    return (
       <Routes>
          <Route path="/" element={<Layout darkMode />}>
-            <Route path="digital-agency" element={<DigitalAgencyPage darkMode />} />
+            <Route path="home" element={<DigitalAgencyPage darkMode />} />
             <Route path="about" element={<AboutPage darkMode />} />
             <Route path="service" element={<ServicePage />} />
             <Route path="service/:serviceDetailsId" element={<ServiceDetailsPage />} />
