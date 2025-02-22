@@ -81,7 +81,7 @@ export default function DigitalAgencyPage({ darkMode }) {
             title="Why Are You Still Running Your Business Like It's 2010?"
             subTitle="Your competitors are automating, growing, and running 24/7. Let's make sure your business does the same—with smarter systems designed for results."
             thumbnailSrc={darkMode ? "/images/digital-agency/hero_bg_dark.jpeg" : "/images/digital-agency/hero_bg.jpeg"}
-            videoSrc="https://www.youtube.com/embed/VcaAVWtP48A?si=vndld55D7mte_-2P"
+            videoSrc="https://www.youtube.com/embed/vlSgNqg2VeM?si=F3FEKutu1w1dVHnr"
             bgUrl="/images/digital-agency/hero_vid_bg.png"
          />
          <div className="cs_primary_bg">
@@ -104,10 +104,10 @@ export default function DigitalAgencyPage({ darkMode }) {
          <Spacing lg="150" md="80" />
          <AboutStyle5
             thumbnailSrc="/images/digital-agency/about_2.png"
-            videoSrc="/images/digital-agency/video.mp4"
+            // videoSrc="/images/digital-agency/video.mp4"
             miniTitle="What We Do"
             title="Best value service provider agency"
-            subTitle="We make specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and do merge imaginative thinking posible dolores."
+            subTitle="We make specializing in strategic digital marketing, partners with aiming the world's leading brands. Breaking from the norm, we push boundaries and bring iamginations to reality."
             progressBarList={[
                { title: "Digital Marketing", percentage: "75" },
                { title: "Brand Strategy", percentage: "85" },
