@@ -6,8 +6,7 @@ export default function PortfolioStyle2({
   thumbnailSrc,
   miniTitle,
   title,
-  subTitle,
-  href,
+  id,
 }) {
   return (
     <div className="cs_portfolio cs_style_2">
@@ -22,10 +21,10 @@ export default function PortfolioStyle2({
           {miniTitle}
         </h3>
         <h2 className="cs_portfolio_title cs_fs_68">
-          <Link to={href}>{parse(title)}</Link>
+          <Link to={id}>{parse(title)}</Link>
         </h2>
-        <p className="cs_portfolio_subtitle">{parse(subTitle)}</p>
-        <Link to={href} className="cs_portfolio_btn cs_primary_color">
+        <p className="cs_portfolio_subtitle">See Project</p>
+        <Link to={`/portfolio/${id}`} className="cs_portfolio_btn cs_primary_color">
           <svg
             width={51}
             height={16}

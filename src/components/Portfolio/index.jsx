@@ -15,18 +15,18 @@ export default function Portfolio({ data }) {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {data.map((item, index) => (
-          <div key={index} className="masonry-item">
+        {data.map((item) => (
+          <div key={item.id} className="masonry-item">
             <div className="cs_portfolio cs_style_1">
-              <Link to={item.href} className="cs_portfolio_thumb cs_radius_15">
+              <Link to={`/portfolio/${item.id}`} className="cs_portfolio_thumb cs_radius_15">
                 <img src={item.imgUrl} alt="Portfolio" />
               </Link>
               <div className="cs_portfolio_info">
                 <h2 className="cs_portfolio_title cs_fs_38">
-                  <Link to={item.href}>{item.title}</Link>
+                  <Link to={`/portfolio/${item.id}`}>{item.title}</Link>
                 </h2>
-                <Link to={item.href} className="cs_portfolio_btn">
-                  {item.btnText}
+                <Link to={`/portfolio/${item.id}`} className="cs_portfolio_btn">
+                  See Project
                 </Link>
               </div>
             </div>
