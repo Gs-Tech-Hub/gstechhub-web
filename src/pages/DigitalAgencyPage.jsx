@@ -40,15 +40,27 @@ export default function DigitalAgencyPage({ darkMode }) {
             setPostData(localData.postData);
             setPortfolioData(localData.portfolioData || []); 
 
+            // Fetch portfolio data from API
+            const portfoliosResponse = await serviceApi.fetchData('portfolios');
+            const portfolios = portfoliosResponse.data;
+
+            // Format portfolio data for the slider
+            const formattedPortfolios = portfolios.map(({ id, attributes: { Title, Client, clientDetails, urlSlug } }) => ({
+               thumbnailSrc: `${urlSlug}`,
+               miniTitle: `${Client}`,
+               title: `${Title}`,
+               id,
+            }));
+
+            // Set portfolioData as an array
+            setPortfolioData(formattedPortfolios);
+
             // Fetch testimonials from API
             const testimonialResponse = await serviceApi.fetchData('testimonials');
-
-            // Ensure we're working with an array and transform the data
             const testimonialItems = Array.isArray(testimonialResponse?.data) 
                ? testimonialResponse.data 
                : [];
 
-            // Transform the testimonial data to match the expected format
             const formattedTestimonials = testimonialItems.map(item => ({
                text: item.attributes?.Description || '',
                avatarName: item.attributes?.Name || '',
@@ -61,8 +73,6 @@ export default function DigitalAgencyPage({ darkMode }) {
 
             const endpoint = 'services-overview?populate[service_categories][populate][services]=*';
             const servicesData = await serviceApi.fetchData(endpoint);
-            
-            // Extract the service categories array
             const serviceCategories = servicesData?.data?.attributes?.service_categories?.data || [];
             setServices(serviceCategories);
          } catch (error) {
