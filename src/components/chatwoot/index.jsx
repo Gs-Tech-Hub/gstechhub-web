@@ -10,7 +10,7 @@ const ChatWoot = () => {
 
     script.onload = () => {
       window.chatwootSDK.run({
-        websiteToken: "oh5NDAdCUuWX8agKhy3Evrf1",
+        websiteToken: process.env.REACT_APP_CHATWOOT_TOKEN,
         baseUrl: BASE_URL, // ✅ Make sure there's a comma here
       });
     };
