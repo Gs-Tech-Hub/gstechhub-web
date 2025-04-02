@@ -21,6 +21,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import DigitalAgencyPage from "./pages/DigitalAgencyPage";
 import ServicePage from "./pages/ServicePage";
+import ChatWoot from "./components/chatwoot/index";
 
 function App() {
    const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function App() {
       window.scrollTo(0, 0);
    }, [pathname]);
    return (
+      <> <ChatWoot />
       <Routes>
          <Route path="/" element={<Layout darkMode />}>
             <Route path="home" element={<DigitalAgencyPage darkMode />} />
@@ -72,7 +74,7 @@ function App() {
          <Route path="/light/" element={<Layout3 />}></Route>
          {/* End Light Mode */}
          <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      </Routes></>
    );
 }
 
